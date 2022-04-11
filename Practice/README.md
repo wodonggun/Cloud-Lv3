@@ -152,3 +152,65 @@ Service는 앞단에서 pod로 통신을 이어준다.
 # 
 - `choco install kustomize`
 - 
+
+
+# ㅁㄴㅇㄹ
+- edu002 수정
+C:\Users\User\Desktop\awesome-shopping-master\awesome-shopping\config\overlay\dev\common\resource\application-common.yaml
+C:\Users\User\Desktop\awesome-shopping-master\awesome-shopping\config\overlay\dev\account\kustomization.yaml
+C:\Users\User\Desktop\awesome-shopping-master\awesome-shopping\awesome-account-service\build.bat
+
+
+
+
+# Docker연결 실행 (cmd 관리자권한으로 실행)
+1. windows상에 Docker프로그램이 실행중이여야함.
+<Docker Restart 에러>
+![image](https://user-images.githubusercontent.com/35188271/162681237-3bb143fb-d5db-43b4-aa82-839648cf1f9c.png)  
+https://blog.nachal.com/1691
+
+
+docker login hrd-registry.hrd.cloudzcp.net -u robot$edu002+edu002
+
+mvnw.cmd clean install -DskipTests=true -s ../settings.xml
+
+- 오류발생시
+![image](https://user-images.githubusercontent.com/35188271/162678746-4379b13e-bcfd-4f92-8d11-ce7deb313cd5.png)
+해당 version 명시
+
+각 서비스별로 -> Build.bat 파일의 명령어 순서대로 실행.
+
+
+<docker 빌드 오류시 참고>
+![image](https://user-images.githubusercontent.com/35188271/162683493-b76a7b8b-5dd0-4a0b-b3a8-ed81160b65d2.png)
+해당 ajr경로 위치를 이동.
+
+해당 edu999->edu002 자신의 계정으로 변경.
+C:\Users\User\Desktop\awesome-shopping-master\awesome-shopping\config\overlay\dev\account\kustomization.yaml
+C:\Users\User\Desktop\awesome-shopping-master\awesome-shopping\config\overlay\dev\bff\kustomization.yaml
+product..
+payment...order...cart...
+
+
+<k8s-all-batch파일 실행>
+kustomize build --load-restrictor LoadRestrictionsNone config/overlay/dev/account | kubectl apply -f -
+kustomize build --load-restrictor LoadRestrictionsNone config/overlay/dev/bff | kubectl apply -f -
+kustomize build --load-restrictor LoadRestrictionsNone config/overlay/dev/cart | kubectl apply -f -
+kustomize build --load-restrictor LoadRestrictionsNone config/overlay/dev/order | kubectl apply -f -
+kustomize build --load-restrictor LoadRestrictionsNone config/overlay/dev/payment | kubectl apply -f -
+kustomize build --load-restrictor LoadRestrictionsNone config/overlay/dev/product | kubectl apply -f -
+
+![image](https://user-images.githubusercontent.com/35188271/162690158-e53cc190-c919-44b4-b986-038548c69f9e.png)
+Ready 0/1에서 1/1로 올라가지않으면 자원이 꽉차서 더이상 생성 못하던가, 잘못 세팅해서 못올라갈 수 있음.
+
+해당 명령어를 통해서 deployment를 통해 배포함.
+`kubectl get deployment -n edu002`
+`kubectl config get-contexts`
+
+![image](https://user-images.githubusercontent.com/35188271/162690796-ff7f95f2-d409-4e6a-905a-60409020e37a.png)
+
+<ingress> = 외부 로드밸런스.
+`$ kubectl create –f config/ingress.yaml`
+`kubectl get ingress`
+`http://edu003.hrd-edu.cloudzcp.com/` : 홈페이지 접속
+  
