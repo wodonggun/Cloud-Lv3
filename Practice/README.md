@@ -103,3 +103,52 @@ https://cheese10yun.github.io/spring-cloud-gateway/
 ## OAuth 통합 로그인
 ![image](https://user-images.githubusercontent.com/35188271/162600764-d36d19e7-52f7-4376-b346-b1f3e8e502ba.png)
 
+
+==================================================================================================================================
+
+# 2주차
+
+## 시스템 환경변수
+C:\Users\User\Desktop\kubeconfig.yaml
+
+- choco 설치 (windows환경에서 필요한 패키지,설치프로그램 관련 툴) : 기존에는  Get-Package가 있었지만 현재는 choco가 편리해서 넘어감.
+powershell -> 관리자권한실행 -> choco install kubernetes-cli  
+
+- `kubectl version` 명령어를 통해 설치 확인.
+
+## 
+
+kubectl config set-context --current --namespace=edu001
+
+## Orchestration
+
+## Pod
+쿠버네티스에서는 컨테이너를 pod로 생각함.
+컨테이너 하나를 작업하기 보다는 여러개의 컨테이너를 사용해야하기 때문에
+
+Pod는 컨테이너들의 모음을 모아놈.
+재시작할 수 있는 Pod단위
+
+## ReplicaSet
+컨테이너 갯수를 알아서 조절함.
+
+Deployment 생성
+- `kubectl create deployment nginx002 --image=nginx`
+- `kubectl get deployment`
+- `kubectl get rs,pod`
+![image](https://user-images.githubusercontent.com/35188271/162654487-6500bc12-8a5f-4c8e-acb7-8ed7b33e237c.png)  
+- Replica이름으로 pod이름이 결정됨 -> 재시작할때마다 pod 뒤에 이름은 계속 바뀌게됨.
+- `kubectl scale --replicas=2 deployment/nginx002` : replica에서 pod2개로 수정
+- `kubectl delete pod nginx002-78d478bf9d-hz5zp`
+- 
+
+서비스 생성
+Service는 앞단에서 pod로 통신을 이어준다.
+- `kubectl create service clusterip nginx002 --tcp:80:80` : service 80생성
+- `kubectl port-forward service/nginx002 30080:80` : 30080으로 요청온 서비스에서 로컬80으로 포팅하겠다?
+
+
+
+# 
+- `choco install kustomize`
+- 
