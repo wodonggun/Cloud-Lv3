@@ -14,6 +14,10 @@ https://app.gather.town/app/9HTmUf3uGr7IR3To/AMF-L3    비번 : 0404
 ![image](https://user-images.githubusercontent.com/35188271/161655469-7f3ac9d9-16ea-460b-baae-718ede5caea4.png)
 
 
+![image](https://user-images.githubusercontent.com/35188271/162855281-1ec384b6-5ec1-4824-91d8-d871411a4519.png)
+
+![image](https://user-images.githubusercontent.com/35188271/162855296-44a0a237-489f-4138-8533-f98b4943d638.png)
+
 # 
 
 
