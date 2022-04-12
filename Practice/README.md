@@ -192,6 +192,8 @@ product..
 payment...order...cart...
 
 
+
+
 <k8s-all-batch파일 실행>
 kustomize build --load-restrictor LoadRestrictionsNone config/overlay/dev/account | kubectl apply -f -
 kustomize build --load-restrictor LoadRestrictionsNone config/overlay/dev/bff | kubectl apply -f -
@@ -209,19 +211,106 @@ Ready 0/1에서 1/1로 올라가지않으면 자원이 꽉차서 더이상 생�
 
 ![image](https://user-images.githubusercontent.com/35188271/162690796-ff7f95f2-d409-4e6a-905a-60409020e37a.png)
 
-<ingress> = 외부 로드밸런스.
+
+`<ingress>` = 외부 로드밸런스
+
 `$ kubectl create –f config/ingress.yaml`
 `kubectl get ingress`
-`http://edu003.hrd-edu.cloudzcp.com/` : 홈페이지 접속
+`http://edu003.hrd-edu.cloudzcp.com/` : `홈페이지 접속`
   
 
-  ## 외전
-  ![image](https://user-images.githubusercontent.com/35188271/162697163-0881be71-9372-4c5a-a49d-c280fb471902.png)
+  
+
+## 외전
+![image](https://user-images.githubusercontent.com/35188271/162697163-0881be71-9372-4c5a-a49d-c280fb471902.png)
  
-  <컨피그 패턴?>
- bff->awsome-title에 값을 넣으면 
-  replicaset은 scale=1이라 최소한 1개의 정상적인 서버를 유지해야하므로,
-  title값을 변경한 컨테이너는 빌드 배포가 완료되어야 이전 컨테이너(title값 변경전)를 내리고,
-  즉시 title변경된 컨테이너를 구동시킴.
+<컨피그 패턴?>
+bff->awsome-title에 값을 넣으면 
+replicaset은 scale=1이라 최소한 1개의 정상적인 서버를 유지해야하므로,
+title값을 변경한 컨테이너는 빌드 배포가 완료되어야 이전 컨테이너(title값 변경전)를 내리고,
+즉시 title변경된 컨테이너를 구동시킴.  
  
-    
+<서버 오류날때 pod확인 명령어>
+kubectl exec envars-pod -it -- /bin/sh
+
+## BFF 개념
+https://programming119.tistory.com/248
+
+## CI CD 예제
+https://git.hrd.cloudzcp.net/amf-cloud/amf-cicd-edu.git
+![image](https://user-images.githubusercontent.com/35188271/162857200-5e1dda2b-971f-4431-a691-4a36014e8d88.png)  
+쿠버네티스 로그, 접속정보 등 private으로 만들어서 regcred값을 가져와서 정해진 경로에 저장?  
+
+
+
+
+
+## git 설정 
+1. https://git.hrd.cloudzcp.net/org/goodteam-pilot/dashboard 접속
+2. edu계정이 아닌 console계정인 goodteam02로 접속해아함
+```
+giteg사이트 -> 우상단 프로파일 드롭다운메뉴 -> 설정
+설정 -> 어플리케이션 -> 엑세스토큰을 만든다.
+git repository 정보까지 포함해서
+amdp dev 프로파일에 입력한다. 
+![image](https://user-images.githubusercontent.com/35188271/162863187-a38d1d2f-1ac3-4fed-99a3-eca19bb119f1.png)  
+```
+
+3. Image 레지스트리 권한 확보
+
+goodteam00(팀계정)으로 ZCP 콘솔 -> tools -> image(harbor) 접속을 한번해야, 그 이후에 팀원들을 초대할 수 있음.
+
+harbor -> 좌측projects -> NEWPROJECT버튼 -> public으로 생성 ->
+멤버확인(한차례 이상 하버에 로그인 되어야 멤버에 추가 가능)
+각 팀 프로젝트 -> Robot Accounts -> 새 로봇계정
+robot$goodteam+goodteam
+토큰 : 
+
+AMDP dev프로파일에 입력 
+
+![image](https://user-images.githubusercontent.com/35188271/162864775-ee625e48-5fab-4f54-9cdf-6f8f4bafc194.png)  
+``` 강사님 내용
+1. Git 정보를 저장할 git repository
+1. 접근 가능한 access token
+2. 이때 사용하는 ZCP 계정은 goodteam00 / twopro00 / onefour00 으로
+3. git access token을 만들어서 잘 저장해두고
+1. gitea사이트 -> 우상단 프로파일 드랍다운메뉴 -> 설정
+2. 설정 -> 어플리케이션 -> 액세스토큰을 만든다
+4. Git repository 정보까지 포함해서
+5. AMDP dev 프로파일에 입력한다
+1. Git protocol : https
+2. Git url : 예를들어 https://git.hrd.cloudzcp.net/twopro-pilot/twopro-config.git
+3. Git username : access token 만든 사용자 이름(goodteam00, twopro00, onefour00)
+4. Git password : access token값
+
+https://git.hrd.cloudzcp.net/goodteam-pilot/evpowerguard-config.git
+토큰 : ㅌㅌㅌㅌㅌㅌㅌㅌㅌ => sanghoonhan 계정으로 만들어서…
+
+2. 이미지 레지스트리 권한 확보
+1. goodteam00 / twopro00 / onefour00 으로 ZCP 콘솔 -> tools -> image (harbor)
+2. 프로젝트 생성 -> good team / twopro / onefour 하버 프로젝트 생성, 우선은 퍼블릭
+3. 멤버 확인(한차례 이상 하버에 로그인 되어야 멤버에 추가 가능)
+4. 각 팀 프로젝트 -> Robot Accounts -> 새 로봇계정
+robot$goodteam+goodteam
+ㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌ
+5. AMDP dev 프로파일에 입력한다
+1. 이미지 레지스트리 url : https://hrd-registry.hrd.cloudzcp.net
+2. 이미지 레지스트리 user : 하버 프로젝트의 로봇계정 이름
+3. 이미지 레지스트리 credential : 하버 프로젝트 로봇계정의 토큰
+```
+
+
+  
+
+```
+AMDP 각 팀 프로젝트 dev 프로파일에서 마이크로서비스추가
+* Git repository에 마이크로서비스 git url을 넣는다
+* Git username, password : accesstoken 소유자 아이디 + 토큰
+* Spring boot 애플리케이션일것이므로 app framework : springbok
+* 전문가모드 체크
+* 기본설정 : 그대로
+* 전문가설정 => 서비스 안정화 설정 => health check => readiness/liveness 체크 해제
+* 프로파일 설정 => 네임스페이스 goodteam/onefour/twopro 선택
+* 그 다음에 하단 생성 누른다
+마이크로서비스 git 구조는 가급적 표준화해서(루트 경로에 pom.xml이나 Dockerfile 배치)
+```
