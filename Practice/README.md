@@ -330,3 +330,32 @@ AMDP 각 팀 프로젝트 dev 프로파일에서 마이크로서비스추가
 * 잘 되면? CD 파이프라인 실행하기
 ====
 ```
+
+## ingress 설명
+
+![image](https://user-images.githubusercontent.com/35188271/162914227-a3e5b1e8-028e-4a75-88cd-b225d308f9b4.png)
+
+```
+설정 : /registration && evpowerguard-registration
+의도 : ev.hrd-edu.cloudzcp.com/registration/users http접속 => evpowerguard-registration-app-dev:8080/users
+현실 : evpowerguard-registration-app-dev:8080/registration/users
+
+설정 : /registration(/|$)(.*)	&& evpowerguard-registration
+의도 : ev.hrd-edu.cloudzcp.com/registration/users http접속 => evpowerguard-registration-app-dev:8080/users 
+현실 : evpowerguard-registration-app-dev:8080/users
+
+
+
+
+==> 그래서! url-rewrite를 통해 /registration(/|$)(.*) 로 path를 써서 $2 두번째 매치인 (.*) 내용만 뒷단의 서비스로 url path를 넘기도록 nginx.ingress.kubernetes.io/rewrite-target: /$2 라는 어노테이션을 적용하여 ingress에 특별 동작을 명시한 것
+===
+
+
+운영자를 통해서 
+유해식 매니저님께서 지원받아야할듯.
+설정들 
+
+MSA 설정을 해야하는데 어려우니까 
+조현상 / 강
+
+```
