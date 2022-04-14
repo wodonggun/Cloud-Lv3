@@ -18,7 +18,9 @@ https://okdevtv.com/mib/react/router
 Pakcage.json이 있으면 `npm i` 명령어는 기본으로 해야함.
 
 
+UI : 부트스트랩, 테일윈드(요즘떠오름)
 
+- `front 배포` : https://app.netlify.com/teams/wodonggun/overview
 
 
 ## ReactDOM
