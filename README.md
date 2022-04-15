@@ -21,8 +21,9 @@ https://app.gather.town/app/9HTmUf3uGr7IR3To/AMF-L3    비번 : 0404
 
 ![image](https://user-images.githubusercontent.com/35188271/163078217-db32d23c-d550-4f6c-9fdb-71434fba49d4.png)
 
+## AMF github
 
-
+https://github.com/AMF-skcc/AMF2022
 
 
 # 
