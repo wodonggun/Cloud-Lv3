@@ -18,6 +18,12 @@
 
 ![image](https://user-images.githubusercontent.com/35188271/164958605-db89da35-f5b1-4407-ba61-16031bc6c514.png)
 
+![image](https://user-images.githubusercontent.com/35188271/164958685-9eab50c9-344a-4267-960d-876b09ee4f72.png)
+
+
+
+
+
 --- 
 ## Agile이란
 
@@ -54,5 +60,19 @@
 2. 2-phase commit 패턴
 3. CQRS
 4. Saga패턴
+
+## 헥사고날 아키텍처
+
+- `참고` : https://mesh.dev/20210910-dev-notes-007-hexagonal-architecture/
+
+![image](https://user-images.githubusercontent.com/35188271/164958825-f9aa7d1c-0623-4086-92ad-c7bb8ee8ae06.png)  
+
+1. 아키텍처 확장이 용이합니다.
+2. SOLID 원칙을 쉽게 적용할 수 있습니다.
+3. 모듈 일부를 배포하는 게 용이합니다.
+4. 테스트를 위해 모듈을 가짜로 바꿀 수 있으므로 테스트가 더 안정적이고 쉽습니다.
+5. 더 큰 비즈니스적 가치를 갖고 더 오래 지속되는 도메인 모델에 큰 관심을 둡니다.
+
+
 
 
