@@ -8,7 +8,10 @@
 
 https://miro.com/app/dashboard/ 
 
-https://app.gather.town/app/9HTmUf3uGr7IR3To/AMF-L3    비번 : 0404
+https://app.gather.town/app/9HTmUf3uGr7IR3To/AMF-L3    비번 : 0404  
+![image](https://user-images.githubusercontent.com/35188271/164973719-09cdee30-5b14-4e7b-a43f-bc4aa152e1b9.png)
+
+
 
 ## 일정
 
