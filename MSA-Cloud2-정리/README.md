@@ -21,10 +21,25 @@
 ![image](https://user-images.githubusercontent.com/35188271/164958685-9eab50c9-344a-4267-960d-876b09ee4f72.png)
 
 
+![image](https://user-images.githubusercontent.com/35188271/164973797-7213c67b-6b2f-41a8-ab9b-7f08f68ee033.png)
+
+
+![image](https://user-images.githubusercontent.com/35188271/164973841-89484287-0811-4a2a-a612-ad2aaaadfd83.png)
+
+![image](https://user-images.githubusercontent.com/35188271/164973869-fb2f26c8-90b2-4527-b5db-1e6027680b9e.png)
+
+![image](https://user-images.githubusercontent.com/35188271/164973888-a8dd943d-1bff-4c2f-b9b0-6c321352903d.png)
 
 
 
 --- 
+
+## 예시 정리
+![image](https://user-images.githubusercontent.com/35188271/164975663-be09e71e-2f22-435e-b57e-50019694a47f.png)
+
+
+
+
 ## Agile이란
 
 ![image](https://user-images.githubusercontent.com/35188271/164953057-51500de2-5f5d-44dc-b2b0-99b3e8a2bd96.png)  
@@ -63,7 +78,10 @@
 
 ## 헥사고날 아키텍처
 
-- `참고` : https://mesh.dev/20210910-dev-notes-007-hexagonal-architecture/
+- `참고` : https://mesh.dev/20210910-dev-notes-007-hexagonal-architecture/  
+
+![image](https://user-images.githubusercontent.com/35188271/164975873-a68efb7e-7ee2-4258-a109-9ddc63cf585b.png)
+
 
 ![image](https://user-images.githubusercontent.com/35188271/164958825-f9aa7d1c-0623-4086-92ad-c7bb8ee8ae06.png)  
 
@@ -72,6 +90,7 @@
 3. 모듈 일부를 배포하는 게 용이합니다.
 4. 테스트를 위해 모듈을 가짜로 바꿀 수 있으므로 테스트가 더 안정적이고 쉽습니다.
 5. 더 큰 비즈니스적 가치를 갖고 더 오래 지속되는 도메인 모델에 큰 관심을 둡니다.
+
 
 
 
