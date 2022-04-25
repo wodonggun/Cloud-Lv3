@@ -4,6 +4,24 @@
 - ㅁㄴㅇㄹ
 
 
+## 이벤트 스토밍 필수 용어
+
+![image](https://user-images.githubusercontent.com/35188271/165105884-e3aa2dbd-d4fb-4372-99a2-bc2c1d6db1ad.png)
+
+![image](https://user-images.githubusercontent.com/35188271/165105959-46dc9c7e-4b4e-49a0-a75f-5173bec72d1e.png)
+
+![image](https://user-images.githubusercontent.com/35188271/165106041-bbe171cf-3494-41bf-948e-e4454861ee09.png)
+
+![image](https://user-images.githubusercontent.com/35188271/165106108-0dda93d7-36e9-4026-8450-dcecbf707869.png)
+
+![image](https://user-images.githubusercontent.com/35188271/165106198-6813a3ab-21f8-4f3f-bdb4-3bab417a9bc7.png)
+
+![image](https://user-images.githubusercontent.com/35188271/165106271-b55a1230-97b1-4a04-a6e8-f9da1f01c182.png)
+
+![image](https://user-images.githubusercontent.com/35188271/165106336-acaecbdd-4701-4a74-837a-929627b5dd28.png)
+
+
+
 ## 이벤트 스토밍
 
 `DDD` : Domain Driven Design 도메인 기반으로 주도하는 디자인 패턴(크고 복잡한 비즈니스 도메인을 이해 및 탐구하는 활동)
