@@ -128,3 +128,19 @@
 
 
 ```
+
+
+## Eventual Consistency / Strong Consistency
+
+`분산 시스템을 구성하려면, 일관성(Strong Consisttency)과 가용성(Eventual Consistency) 중 하나를 포기해야하는 상황이 올 수 있음`
+
+>> 새로운 추가, 수정이 발생하더라도 조금 늦게 보여주거나 이전정보(수정전)를 보여주더라도 크게 문제없는 시스템에 사용 가능합니다.
+>> 예를 들어서 SNS같은 서비스는 글자나 사진을 수정하더라도 몇초,길게는 몇분 수정전 내용을 보여주더라도 크게 리스크가 없다.(DNS서비스, 소셜미디어)
+>> 하지만 은행, 결제, 실시간성이 중요한 정보에서는 
+
+![image](https://user-images.githubusercontent.com/35188271/165011047-874d5404-4d4f-4a97-b6f6-f055e02d3eeb.png)
+
+![image](https://user-images.githubusercontent.com/35188271/165011287-5cd3d986-8eb2-49f4-995c-13c8e51de811.png)
+
+![image](https://user-images.githubusercontent.com/35188271/165011456-55d6f9eb-9d9e-4776-9938-dbc07013b666.png)
+
