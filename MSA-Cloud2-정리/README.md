@@ -3,6 +3,47 @@
 - `K-MOOC 강의(MSA 개념용 강추)` : http://www.kmooc.kr/courses/course-v1:KAISTk+2018_K14+2021_K14_01/video
 - ㅁㄴㅇㄹ
 
+## 전략적 설계 vs 전술적 설계
+
+- `전략적 설계` : 이벤트 스토밍을 통한 도메인 중심의 큰 방향성(마이크로서비스 후보 식별)
+- `전술적 설계` : 기술적으로 나아가야하는 세부 방향성(마이크로서비스 상세 설계)
+
+![image](https://user-images.githubusercontent.com/35188271/165207238-0a0e800a-056e-43af-9934-02cd394b62d3.png)  
+
+![image](https://user-images.githubusercontent.com/35188271/165207046-011f63b5-f77f-4343-b287-68690b51e4be.png)
+
+## 도메인 모델 / 도메인 모델링
+
+![image](https://user-images.githubusercontent.com/35188271/165207932-d8e94239-63e5-41e9-80d4-00dcd1fd69b5.png)
+
+![image](https://user-images.githubusercontent.com/35188271/165207974-90ca39da-ce2a-4689-bd19-583857d2d119.png)
+
+
+## Entity 엔티티
+
+`고유한 식별자를 가지고, 변화 가능성이 많고, 반드시 다른 시스템과 구별해야하는 주요 개념`  
+![image](https://user-images.githubusercontent.com/35188271/165208356-8313b6bd-602d-409d-8906-6a9a4b677b99.png)
+
+
+
+## Value Object(VO 값 객체)
+
+`고유한 식별성 없이, 값으로만 비교할 객체, 개별 속성이 수정되거나 삭제가 아니고 객체의 전체가 생성되거나 삭제되어야 하는 방식`  
+ex) 아래 그림과 같이 Address객체는 address와 zipCode를 가지는데 이러한 정보는 수정이 아니라 삭제되었다가 다시 발행되어야함.
+![image](https://user-images.githubusercontent.com/35188271/165208538-6ce3529d-4bce-469e-a697-84a84bf286a4.png)
+
+```
+하지만 하나의 계정이 여러개의 주소를 가질 수 있다면, 엔티티로 사용해도 됨.
+
+```
+
+## Standard Type (표준타입)
+
+![image](https://user-images.githubusercontent.com/35188271/165208810-08920fee-2e7b-4221-ab93-ce9810c5135f.png)
+
+
+
+
 
 ## 이벤트 스토밍 필수 용어
 
@@ -12,9 +53,9 @@
 
 ![image](https://user-images.githubusercontent.com/35188271/165106041-bbe171cf-3494-41bf-948e-e4454861ee09.png)
 
-![image](https://user-images.githubusercontent.com/35188271/165106108-0dda93d7-36e9-4026-8450-dcecbf707869.png)
+![image](https://user-images.githubusercontent.com/35188271/165106108-0dda93d7-36e9-4026-8450-dcecbf707869.png)  
 
-![image](https://user-images.githubusercontent.com/35188271/165106198-6813a3ab-21f8-4f3f-bdb4-3bab417a9bc7.png)
+![image](https://user-images.githubusercontent.com/35188271/165206970-ae633a9a-b1de-4d19-9a85-83af27648cbf.png)
 
 ![image](https://user-images.githubusercontent.com/35188271/165106271-b55a1230-97b1-4a04-a6e8-f9da1f01c182.png)
 
