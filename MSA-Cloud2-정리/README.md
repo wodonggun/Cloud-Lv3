@@ -1,7 +1,7 @@
 # MSA 
 
 - `K-MOOC 강의(MSA 개념용 강추)` : http://www.kmooc.kr/courses/course-v1:KAISTk+2018_K14+2021_K14_01/video
-- ㅁㄴㅇㄹ
+
 
 ## 전략적 설계 vs 전술적 설계
 
