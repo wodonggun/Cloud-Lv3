@@ -353,3 +353,32 @@ Prepare이나 Commit중에 DB가 응답이 없으면 Locking이거나 대기상�
 - `SQL Mapping방식` : 세밀한 SQL 튜닝 및 가공 가능.
 - `OR Mapping방식(ORM)` : 간단하고, 개발자는 개발에 더 집중할 수 있음, 서로 다른 관계형 데이터베이스 전환 및 No-SQL 변경도 가능함.
 
+
+
+## Entity vs VO vs DTO
+
+- `참고` : https://velog.io/@gillog/Entity-DTO-VO-%EB%B0%94%EB%A1%9C-%EC%95%8C%EA%B8%B0
+
+
+`Entity : DB와 1:1로 매핑되는 클래스`  
+![image](https://user-images.githubusercontent.com/35188271/165736103-b700cdd5-8271-47cb-8798-0cee94b427ff.png)  
+
+
+![image](https://user-images.githubusercontent.com/35188271/165736119-5b395507-5a82-497c-9bb2-8d4b74ce8198.png)  
+
+  
+`VO : Entity가 가지고 있는 컬럼 외에도 가공된 데이터를 가질 수 있음.`  
+![image](https://user-images.githubusercontent.com/35188271/165736385-2fc4d51a-fd94-481e-8008-b969a45a1e0f.png)
+
+![image](https://user-images.githubusercontent.com/35188271/165736744-5c07bf44-60d1-437c-bd39-6816b6099aa2.png)  
+VO는 객체 비교를 위한 Equals함수를 추가하여 보낼 수 있음.
+
+
+`DTO : DB의 데이터를 Service나 Controller로 보내는 객체(VO와 다르게 로직이 없음)`  
+![image](https://user-images.githubusercontent.com/35188271/165736532-dfd3b860-4615-4f42-8833-9c49ac808cde.png)  
+
+
+![image](https://user-images.githubusercontent.com/35188271/165737209-9a0be600-16fa-4748-9686-a7518294b566.png)
+
+
+
