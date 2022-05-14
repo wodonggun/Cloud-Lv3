@@ -1,3 +1,45 @@
+# EV POWER GUARD
+
+![image](https://user-images.githubusercontent.com/35188271/168420890-0d406419-bf78-46ff-b5e5-a82befa83a38.png)
+![image](https://user-images.githubusercontent.com/35188271/168421044-09e0a99e-f1a9-4cc0-86bd-c24b1aef906e.png)
+
+
+
+# 리엑트 강의
+- 로그인 구현 : https://www.youtube.com/watch?v=WLdbsl9UwDc
+- 리엑트 라우터 : https://www.youtube.com/watch?v=WLdbsl9UwDc
+- 리엑트 router 버전 다운 : npm install react-router-dom@5.3.0
+- 리엑트 MUI : https://www.youtube.com/watch?v=or3np70c7zU
+
+
+
+
+# Oauth2
+
+```
+<참고 : https://www.youtube.com/watch?v=HtJKUQXmtok>
+
+npx create-react-app client
+
+
+(npm install gapi-script react-google-login --save --legacy-peer-deps)
+npm install gapi-script react-google-login
+
+```
+
+
+
+## MUI
+
+- npm install @mui/material @emotion/react @emotion/styled @types/react
+- `가이드문서` : https://mui.com/material-ui/react-button/
+- npm install @mui/icons-material
+
+
+
+
+
+
 ## MSA 로그인 도메인
 
 ```
