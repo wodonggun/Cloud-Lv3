@@ -68,7 +68,7 @@ Address는 한글 주소와 우편번호가 존재하므로, 따로ㅇ VO(Value 
 Prodct엔티티에 ProductDescription이라는 엔티티를 넣고, 그 엔티티는 색상과 가격을 가지고 있는다.
 
 
-## ㅁㄴㅇㄹ
+## 인증구현
 
 
 토큰 만료 구분 
@@ -94,7 +94,40 @@ Prodct엔티티에 ProductDescription이라는 엔티티를 넣고, 그 엔티�
       return Promise.reject(error)
 ```
 
+## 인증만료시 세션 연장
+```
+public Object run() throws zuulException{
+try{
+  String jwtToken = this.getJwtTokenInContext();
+  Claims claims = Jwts.parser().setSigningkey(FilterConfig.JWT_SIGNING_KEY).parseClaimsJws(jwtToken).getBody();
+  this.verifyAuthorization(claims));
+  this.setHeaderToRequest(claims);
+  }
+  catch(ExpiredJwtExceptionex) {
+  this.forwardingSessionExtendEndPoint(ex.getClaims());
+  }
+}
+```
 
+인증서비스에서 토큰 만료 혹은 세션 연장 시 401code와 함께 리턴 
+```
+@ApiOperation(value = "Acecess 토큰 재발급");
+@RequestMapping( 
+    value= "/auth/sign/refresh",
+    method = {ReqeustMethod.DELETE, RequestMethod.OPTIONS, RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT}
+    }
+public ResponseEntity<SignResponse> refreshToken(
+  HttpServiceRequest request,
+  @RequestHeader(AccessTokenField.MEMBER_ID_KEY) String userId,
+  @RequestHeader("Authorization") String accessToken
+  ){
+    String requestIp = WebHelper.getIpAddress(request);
+    return new ResponseEntity<>(signService.extendSession(userId, requestIp, accessToken), HttpStatus.UNAUTHORIZED);
+    
+  }
 
-
-
+@ExceptionHandler(ExpiredJwtException.class)
+protected ResponseEntity<String> handleExpiredJwtException(){
+  return new ResponseEntity<>( body: "Session expired! please login again.", HttpStatus.UNAUTHORIZED);  //UNAUTHORIZED = 401 code
+}
+```
