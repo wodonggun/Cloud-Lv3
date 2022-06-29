@@ -21,13 +21,14 @@ ex) 로그인 버튼 클릭 시
 
 
 ## yarn
-`package lock파일은 개발자간 모듈 버전을 맞추기 위해서 사용함`
 
-`yarn`은 npm에 비해 install 속도가 더 빠르고, 
+- `package.json과 yarn.lock 관계` : https://www.daleseo.com/js-package-locks/
 
-`yarn.lock`은 버전에 종속성으로 다른사람이 yarn install시에 yarn.lock에 포함된 버전을 그대로 수용하고 고정으로 사용하게됨. 이렇게 해서 팀의 버그를 방지하면서
-팀 모두가 똑같은 패키지를 갖도록 보장함.
+- `package lock파일은 개발자간 모듈 버전을 맞추기 위해서 사용함` :
 
+- `yarn`은 npm에 비해 install 속도가 더 빠르고, yarn.lock`은 버전에 종속성으로 다른사람이 yarn install시에 yarn.lock에 포함된 버전을 그대로 수용하고 고정으로 사용하게됨. 이렇게 해서 팀의 버그를 방지하면서 팀 모두가 똑같은 패키지를 갖도록 보장함.
+
+결국 팀원들은 package.json과 yarn.lock을 둘다 사용하지만 package.json은 각 팀원들마다 계속 최신화가 될 수 있지만, yarn.lock에 있는 버전들은 고정되어서 package.json의 영향을 받지 않음 = yarn.lock은 수정하거나 삭제하는건 모두의 버전 동의가 필요함.
 
 ## netlify 배포방법
 https://velog.io/@ksmfou98/React-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Netlify%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0
