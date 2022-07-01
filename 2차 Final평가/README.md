@@ -30,6 +30,35 @@ ex) 로그인 버튼 클릭 시
 
 결국 팀원들은 package.json과 yarn.lock을 둘다 사용하지만 package.json은 각 팀원들마다 계속 최신화가 될 수 있지만, yarn.lock에 있는 버전들은 고정되어서 package.json의 영향을 받지 않음 = yarn.lock은 수정하거나 삭제하는건 모두의 버전 동의가 필요함.
 
-## netlify 배포방법
-https://velog.io/@ksmfou98/React-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Netlify%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0
 
+## CI-CD 
+
+![image](https://user-images.githubusercontent.com/35188271/176850388-2c3a4de6-87f8-4ab1-b660-baac4307ae84.png)
+
+- CI/CD : 하나의 단어로 `사용자에게 빈번이 배포할 수 있는 환경을 말함`
+
+- CI : 주기적으로 메인레포지토리에 빌드/배포되는것을 말함. 
+ 1. 코드 변경사항을 주기적으로 빈번하게 머지해야 함.
+ 2. 통합을 위한 단계의 자동화 (빌드, 테스트, 메인branch 머지)
+ 3. 지속적으로 통합을 통해 
+
+
+- CD : 배포 준비 -> 개발팀/검증팀의 검증 -> 배포
+ 1. Continuous Delivery : CI이후에 개발팀과 검증팀 검증 + 배포가 수동으로 이루어지는 환경.
+ 2. Continuous Deployment : 최종 배포까지 자동화.
+
+- `CI(Continuous Integration)=지속적 통합` : 개발자들을 위한 자동화 프로세스를 의미하며, CI환경이 성공적으로 구성되면 코드 변경 사항이 정기적으로 빌드 및 테스트되어 자동으로 공유 레포지토리에 통합되면서 (주기적으로 하면) 코드 작업에 대한 충돌 문제가 해결됨.  
+![image](https://user-images.githubusercontent.com/35188271/176574781-4dbb038e-fa63-45f9-aa30-f965a8739927.png)
+
+- `CD(Continuous Delivery)= 지속적인 제공` : 개발자들이 어플리케이션에 적용한 변경 사항이 버그 테스트를 거쳐 레포지토리에 자동으로 업로드 되는것을 뜻함.
+- `CD(Continuous Deployment)=지속적인 배포` : 레포지토리의 소스를, 운영 환경까지 자동으로 배포하는것을 말함. 파이프라인의 다음 단계를 자동으로 해결.
+CI에서 빌드/테스트 완료 후에 배포단계에서 `release할 준비 단계를 거치고, 수정할만한게 없는지 검증팀이 검증함`. 즉, QA환경에서 검증하고 운영에 배포하는것까지 자동으로 진행.  
+![image](https://user-images.githubusercontent.com/35188271/176652903-71b34eb3-f12b-4a95-a34f-6b4e6edcf384.png)
+
+
+## github action (CI/CD)
+
+https://www.youtube.com/watch?v=iLqGzEkusIw
+
+
+## 
