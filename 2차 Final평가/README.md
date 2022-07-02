@@ -61,4 +61,22 @@ CI에서 빌드/테스트 완료 후에 배포단계에서 `release할 준비 �
 https://www.youtube.com/watch?v=iLqGzEkusIw
 
 
-## 
+## GoF 디자인 패턴
+![image](https://user-images.githubusercontent.com/35188271/176984284-8cc3aeea-1b7d-4de4-a736-9da563b384bf.png)
+![image](https://user-images.githubusercontent.com/35188271/176984290-5fa38589-4093-46b7-86b8-9694a91976cd.png)
+![image](https://user-images.githubusercontent.com/35188271/176984296-b6d133d6-d832-4d1e-82e9-3e7f4008c06b.png)
+
+
+## 기술부채
+![image](https://user-images.githubusercontent.com/35188271/176984405-b04c2c6e-5c38-4ee0-88af-e6a195f61048.png)  
+  
+    
+![image](https://user-images.githubusercontent.com/35188271/176984440-7df8055d-8eb9-4af2-bd2b-1e0c3daeda25.png)  
+  
+  
+![image](https://user-images.githubusercontent.com/35188271/176984464-6104b8e4-3913-4446-93b5-7852cde72fd9.png)  
+  
+  
+
+
+
