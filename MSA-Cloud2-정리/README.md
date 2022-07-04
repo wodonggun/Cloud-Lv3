@@ -166,12 +166,11 @@ Prepare이나 Commit중에 DB가 응답이 없으면 Locking이거나 대기상�
 이러한 문제를 해결하기위해 Saga패턴이 제시됨.
 ```
 
-
 - Saga패턴 : 각 서비스의 Local DB를 업데이트하고, 다른 서비스의 Local DB를 변경하라고 트리거 이벤트를 발생.
 하지만 위의 같은 상황에서 마지막 서비스의 DB가 실패하게되면 어떻게 롤백해서 데이터 일괄성을 유지할거냐? 
 ![image](https://user-images.githubusercontent.com/35188271/165097679-a674f2e5-6507-4a39-b44a-31a842f0d390.png)
   SAGA패턴 내에있는 서비스끼리 서로 보상 트랜잭션 이벤트를 발생시킴.
-
+(https://azderica.github.io/01-architecture-msa)
 
 - `Choreography SAGA 패턴` : 트랜잭션 처리하고, 처리 이벤트가 승인되었는지, 거부되었는지 이벤트로 발행함(`메세지큐 방식`)  
 ![image](https://user-images.githubusercontent.com/35188271/165098879-414b05ad-3454-4ac6-9be0-1f86c8e0fff2.png)  
