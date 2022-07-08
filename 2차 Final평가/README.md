@@ -103,12 +103,77 @@ https://www.youtube.com/watch?v=iLqGzEkusIw
 5.빌드, 릴리즈, 실행 : 철저하게 분리된 빌드와 실행 단계 = 빌드 후 동일 버전 반복 사용, 유니크가 릴리즈ID 부여, 이전 버전으로 롤백 지원 
 6. 프로세스 : 애플리케이션 또는 여러개의 무상태(Stateless) 프로세스로 실행 = 일반서비스는 stateless, 일반 서비스는 실시간 동기화
 7. 포트바인딩 : 포트 바인딩을 사용해서 서비스를 공개함 = A서비스가 B서비스를 HTTP로 호출
-8. 동시성(Concurrency) : 프로세스 모델을 사용한 확장 
-9. 폐기가능(Disposability) : 빠른1시작과 그레이스풀 셧다안정성 극대화 
+8. 동시성(Concurrency) : 프로세스 모델을 사용한 확장 = 프로세스별 최소/최대 개수 조정, 필요 시 추가로 기동 가능.
+9. 폐기가능(Disposability) : 빠른1시작과 그레이스풀 셧다안정성 극대화 = Spring boot의 gracefulshutdown 적용
+10.개발/프로덕션환경 일치 : 개발, 스테이징, 프로덕션 환경을 최대한 비슷하게 유지 = App. server, DBserver 등 동일/유사한 구조로 시스템 자원을 할당.
+11. 로그 : 로그를 이벤트 스트림으로 취급. application은 output Stream에 관여 x = LogBack을 이용하여 server에1남긴1후, fileBeat로 전송.
+12.Admin 프로세스 : admin/maintaenance 작업을 일회성 프로세스로 실행
+```
+
+- API GateWay : Netflix oss Zuul 
+- Service Discovery : netlifx oss Eureka
+- Load Balancing : netflix oss Ribbon
+- Circuit Breaker : netflix oss Hystrix
+- Service Orchestration : In-House
+- Distributed Tracing : Zipkin, Spring Cloud Sleuth(또는 Jaeger)
+- 모니터링 : Prometheus, Grafana 
+- 로그 : Filebeat, Logstash, Elasticsearch, kibana
+- CI/CD :젠킨스
+- Provision Tool : Ansible
+- ETL : innoQuartz
+- Source Code Repository : 비트버킷
+- 협업 도구 : 지라 컨플루언스
+- FE : React, Vue 
+- BE : Spring 
+
+```
+배포 자동화를 위해서 젠킨스
+Vue.js는 이쁜 컴포넌트가 많아서 추가함.
+오케스트레이션은 사용률에따라서 instance를 알아서 조절함.
+프로매태우스는 모니터링 도구이고, 시각화를 위해 그라파나를 사용
+유레카는 MSA서버가 배포되고 추가된게 어디 포트에 있는지 관리/추적함.(IP/port 등록하여 서비스 목록을 관리) 
+RIBBON은 로드밸런싱
+히스트릭스 : 서비스간 장애 발생시 장애가 전파되지 않도록 서킷브레이커 역할
+```
+
+고가용성을 위해서 2개씩 서버를 만듬(HPA?)
+이중화를 위해서 2개의 장비를 사용하는데, L4 스위칭 장비를 사용(외부에서 들어오는건 L4를 무조건 지나감
+
+C#으로 만든 차트서버나 스마트DSP는1유레카에서 등록/해제를 하기위해 따로 세팅해줘야함(기본적으로는 Spring에서는 유레카클라이언트가 지원해줌
 
 
+```
+Ribbon - Client-side Load balaner 
+S/W기반으로 비용이 저렴함. 어플리케이션에서 서버리스트를 관리하여 유연하게 대응 가능.
+
+일반적인 서버사이드 로드밸런서는 H/W기반이여서 비용 많이 소모됨. 
+H/W가 서버 목록을 알고있어야 로드밸런싱 가능.
+H/W 스위치의 서버 목록을 수동으로 추가해서 유연성 저하.
+```
+
+```
+서킷브레이커 - hystix
+A서비스에서 B서비스를 호출할때 동기형식으로 호출하는데 기존에는 A에서 B를 호출하면 응답이 올때까지 대기하면서 죽어버림.
 
 ```
 
 
+```
+흐름 : 외부에서 서비스 요청(예약서비스 요청) -> Zuul(API gate)에서 받아서 유레카서버에서 서비스 목록 확인 -> 서비스 라우팅 -> 서비스 호출
+-> 비지니스 로직 수행 
 
+엘라스틱에 스위치에서 ServicePool을 호출했던 로그를 가지고있다가 바로 해당 service pool이 있는 장비로 연결해줌.
+
+```
+
+- Ansible : 배포하는 서버가 여러개인 경우 도입하는걸 고려해볼만함. (DEV, QA, PROD가 있고 해당 서버들이 각각 여러개라면?)
+
+
+
+```
+<로그>
+beat(비치)는 로그스태쉬로 로그를 전송하고,
+로그스태쉬는 수집
+엘라스틱서치는 정제하고
+키바나는 
+```
