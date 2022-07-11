@@ -29,11 +29,12 @@ https://app.gather.town/app/9HTmUf3uGr7IR3To/AMF-L3    비번 : 0404
 https://github.com/AMF-skcc/AMF2022
 
 
-# 
+## DDD 교육 과정
+
+https://workflowy.com/s/ddd/9pFlIV5XAfuWu3qC
 
 
-# MSA 교육
-
+## MSA 교육
 
 ![image](https://user-images.githubusercontent.com/35188271/161655449-eaaa2feb-6477-4c90-8c7d-6d371346f6a0.png)
 
