@@ -131,3 +131,7 @@ protected ResponseEntity<String> handleExpiredJwtException(){
   return new ResponseEntity<>( body: "Session expired! please login again.", HttpStatus.UNAUTHORIZED);  //UNAUTHORIZED = 401 code
 }
 ```
+
+## 나중에 참고할거
+- 로그인 구현 
+https://github.com/LeoHeo/collect/tree/develop/src/main/java/com/collect/domain/user
