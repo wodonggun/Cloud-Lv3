@@ -29,6 +29,19 @@ npm install gapi-script react-google-login
 
 
 
+
+# JWT
+![image](https://user-images.githubusercontent.com/35188271/193027801-92991516-5dfa-4ae9-85b7-cdbbe0e41234.png)  
+
+1. 쿠키 - .env파일로 쿠키시크릿키를 가지고있고, gitignore에 .env랑 node_modules 포함해야함. 쿠키에 모든걸 담으면 무거워지고, 임의 조작 및 탈취 가능함. 사용자 Client단에서
+이러한 criticla한 정보는 담으면 안됨.
+2. 세션 - 쿠키에 세션ID를 보관함. 서버에서 세션 관련 정보를 저장하고 DB에 접근해야해서 자원 많이 잡아먹음(분산서비스에서는 부적절)
+3. JWT - Json Web Token
+![image](https://user-images.githubusercontent.com/35188271/193028229-0506624a-b492-4642-a5e0-991236da3ad0.png)
+
+
+
+
 ## MUI
 
 - npm install @mui/material @emotion/react @emotion/styled @types/react
